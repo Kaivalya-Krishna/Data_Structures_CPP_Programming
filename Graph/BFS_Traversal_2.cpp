@@ -32,26 +32,26 @@ int main ()
         cout << endl;
     }
 
-    // vector <int> status(N, 0);
-    // queue <int> Q;
-    // status[0] = 1;
-    // Q.push(0);
-    // cout << "Order of BFS is :";
-    // while (Q.size() != 0)
-    // {
-    //     int x = Q.front();
-    //     cout << x << ", ";
-    //     Q.pop();
-    //     for (int k = 0; k < AdjList[x].size(); k++)
-    //     {
-    //         int e = AdjList[x][k];
-    //         if (status[e] == 0)
-    //         {
-    //             status[e] = 1;
-    //             Q.push(e);
-    //         }
-    //     }
-    // }
+    vector <int> status(N, 0);
+    queue <int> Q;
+    status[0] = 1;
+    Q.push(0);
+    cout << "Order of BFS is :";
+    while (Q.size() != 0)
+    {
+        int x = Q.front();
+        cout << x << ", ";
+        Q.pop();
+        for (int k = 0; k < AdjList[x].size(); k++)
+        {
+            int e = AdjList[x][k];
+            if (status[e] == 0)
+            {
+                status[e] = 1;
+                Q.push(e);
+            }
+        }
+    }
 
     return 0;
 }
